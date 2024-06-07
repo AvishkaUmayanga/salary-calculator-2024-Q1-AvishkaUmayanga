@@ -3,7 +3,8 @@
 #Prerequisites
 
 Node.js installed on your machine
-npm or yarn installe
+
+npm or yarn installed
 
 #Steps to Setup
 
