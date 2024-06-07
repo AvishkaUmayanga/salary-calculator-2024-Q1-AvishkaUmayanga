@@ -1,10 +1,12 @@
 # React + TypeScript + Vite
 
 #Prerequisites
+
 Node.js installed on your machine
 npm or yarn installe
 
 #Steps to Setup
+
 1.Clone the project repository
   git clone https://github.com/AvishkaUmayanga/salary-calculator-2024-Q1-AvishkaUmayanga.git
 
