@@ -1,12 +1,12 @@
-import { FaPlus } from "react-icons/fa";
+import plusIcon from '../../assets/plus.png';
 import DeductionInput from "./DeductionInput";
 import { useDispatch } from "react-redux";
 import { addDeductionInputFields } from "../../redux/slices/deductionSlice";
 
 const DeductionsArea = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const handleAddNewDeduction = (newInput: {data: string}) => {
-    dispatch(addDeductionInputFields(newInput))
+    dispatch(addDeductionInputFields(newInput));
   }
 
   return (
@@ -17,7 +17,7 @@ const DeductionsArea = () => {
       </div>
       <DeductionInput />
       <button className="flex items-center gap-1 font-medium text-blueTxt w-max" onClick={() => {handleAddNewDeduction({data: 'newDeduct'})}} >
-        <FaPlus />
+        <img src={plusIcon} alt="plus icon" />
         <p>Add New Deduction</p>
       </button>
     </div>

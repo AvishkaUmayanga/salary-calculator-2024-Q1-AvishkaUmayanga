@@ -1,14 +1,14 @@
-import { FaPlus } from "react-icons/fa";
+import plusIcon from '../../assets/plus.png';
 import { useDispatch } from "react-redux";
 import { addEarnInputField } from "../../redux/slices/earningSlice";
 
 import EarningsInput from "./EarningsInput";
 
 const EarningsArea = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   
   const handleAddNewEarning = (newInput: {data:string, isChecked: boolean}) => {
-    dispatch(addEarnInputField(newInput))
+    dispatch(addEarnInputField(newInput));
   }
   
   return (
@@ -19,7 +19,7 @@ const EarningsArea = () => {
       </div>
      <EarningsInput />
       <button className="flex items-center gap-1 font-medium text-blueTxt w-max" onClick={()=>{handleAddNewEarning({data:'newEarn', isChecked: false})}}>
-        <FaPlus />
+        <img src={plusIcon} alt="plus icon" />
         <p>Add New Allowance</p>
       </button>
     </div>

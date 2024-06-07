@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 type deductInput = {
     data: string;
-    deductBalance: number
+    deductBalance: number;
+    deductTitle: string;
 }
 
 const initialState = {
@@ -13,16 +14,22 @@ const deductionSlice = createSlice({
     initialState,
     reducers: {
         addDeductionInputFields: (state, action) => {
-            state.deductionInputs.push(action.payload)
+            state.deductionInputs.push(action.payload);
         },
         removeDeductionInputFields: (state, action: {payload: number}) => {
-            state.deductionInputs.splice(action.payload, 1)
+            state.deductionInputs.splice(action.payload, 1);
         },
-        getDeductBalance: (state, action: {payload: {balance: number, index: number}}) => {
-            state.deductionInputs[action.payload.index].deductBalance = action.payload.balance
+        addDeductBalance: (state, action: {payload: {balance: number, index: number}}) => {
+            state.deductionInputs[action.payload.index].deductBalance = action.payload.balance;
+        },
+        addDeductTitle: (state, action: {payload: {title: string, index: number}}) => {
+            state.deductionInputs[action.payload.index].deductTitle = action.payload.title
+        },
+        clearDeduction: (state) => {
+            state.deductionInputs = [];
         }
     }
 })
 
-export default deductionSlice.reducer
-export const { addDeductionInputFields, removeDeductionInputFields, getDeductBalance } = deductionSlice.actions
+export default deductionSlice.reducer;
+export const { addDeductionInputFields, removeDeductionInputFields, addDeductBalance, addDeductTitle, clearDeduction } = deductionSlice.actions;
